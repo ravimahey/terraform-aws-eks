@@ -98,8 +98,14 @@ variable "databases" {
     db_instance_class = string
     db_version        = string
     db_storage        = number
-    db_name           = string
-    db_username       = string
-    db_password       = string
   }))
+}
+
+
+# ECR variable
+variable "ecr" {
+  type = map(object({
+    repositories = list(string)
+  }))
+
 }

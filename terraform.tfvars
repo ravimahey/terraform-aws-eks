@@ -56,7 +56,25 @@ databases = {
     db_version        = "13.13"
     db_storage        = 20
     db_name           = "devapi2"
-    db_username       = ""
+    db_username       = "devapi2admin"
     db_password       = ""
+  }
+}
+
+
+# ECR configuration
+
+ecr = {
+  dev = {
+    repositories = [
+      "deva",
+      "redis"
+    ]
+  }
+  prod = {
+    repositories = [
+      "prodapi1",
+      "test2"
+    ]
   }
 }
