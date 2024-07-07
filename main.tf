@@ -86,3 +86,17 @@ module "database" {
   vpc_id            = module.vpc.vpc_id
   subnet_ids        = module.vpc.storage_subnet_ids
 }
+
+##########################################################################
+# ECR Module
+#########################################################################
+
+module "ecr" {
+  for_each = var.ecr
+  source   = "./modules/ecr"
+  
+  repository_name     = each.value.repositories  # Assuming 'repositories' is the correct attribute
+  cluster_prefix      = var.cluster_prefix
+  image_tag_mutability = "MUTABLE"  # Ensure this matches the desired mutability setting
+  scan_on_push        = false       # Adjust as per your requirements
+}

@@ -94,12 +94,21 @@ variable "nodes" {
 variable "databases" {
   description = "Map of databases to create with their respective configurations"
   type = map(object({
+    db_name = string
+    db_password = string
+    db_username = string
     db_engine         = string
     db_instance_class = string
     db_version        = string
     db_storage        = number
-    db_name           = string
-    db_username       = string
-    db_password       = string
   }))
+}
+
+
+# ECR variable
+variable "ecr" {
+  type = map(object({
+    repositories = list(string)
+  }))
+
 }

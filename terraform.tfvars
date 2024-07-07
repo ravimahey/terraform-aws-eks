@@ -38,8 +38,8 @@ nodes= {
   dev = {
     instance_type   = ["t3.medium"]
     node_type = "vm"
-    desired_size    = 1
-    max_size        = 3
+    desired_size    = 3
+    max_size        = 4
     min_size        = 1
   }
   prod = {
@@ -57,6 +57,22 @@ databases = {
     db_storage        = 20
     db_name           = "devapi2"
     db_username       = "devapi2admin"
-    db_password       = "gNjx3jKUcoRk8JJ"
+    db_password       = ""
+  }
+}
+
+
+# ECR configuration
+
+ecr = {
+  dev = {
+    repositories = [
+      "test1"
+    ]
+  }
+  prod = {
+    repositories = [
+      "test2"
+    ]
   }
 }

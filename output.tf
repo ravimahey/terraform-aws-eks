@@ -37,3 +37,10 @@ output "vpc_id" {
   description = "ID of the VPC"
   value       = module.vpc.vpc_id
 }
+
+# ECR Output
+
+# output "ecr_url" {
+#   description = "ECR urls" 
+#   value = module.ecr.ecr_repository_urls
+# }
